@@ -66,13 +66,14 @@ namespace JogoMemoria
         private void AdicionarBotoes()
         {
             AdicionarLinhas(tabela);
-            AdicionarColunas(tabela);            
+            AdicionarColunas(tabela);
             fotos = new Button();
             fotos.Size = new Size(tabela.Size.Width, 40);
             fotos.Text = "selecionar fotos";
             fotos.BackColor = Color.DarkGray;
             fotos.ForeColor = Color.Black;
             fotos.Click += new EventHandler(Fotos_Click);
+            legenda.SetToolTip(fotos, "Selecione no mínimo 6 imagens para o jogo");
             tabela.Controls.Add(fotos);
         }
 

@@ -195,6 +195,7 @@ namespace JogoMemoria
             foreach (var imagem in listaImagens)
             {
                 carta = new Button();
+                carta.FlatStyle = FlatStyle.Flat;
                 carta.BackgroundImage = Image.FromFile(pastaRaiz + versoCarta);
                 carta.BackgroundImageLayout = ImageLayout.Zoom;
                 carta.Size = new Size(tabelaAtual.ClientSize.Width, tabelaAtual.ClientSize.Height);

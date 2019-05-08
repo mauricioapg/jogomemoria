@@ -84,6 +84,7 @@ namespace JogoMemoria
                 AdicionarColuna(tabela);
                 AdicionarLinhas(tabela);
                 categoria = new Button();
+                categoria.FlatStyle = FlatStyle.Popup;
                 categoria.Size = new Size(tabela.Size.Width, tabela.Size.Height);
                 categoria.Tag = 0;
                 categoria.Text = pasta.Name;

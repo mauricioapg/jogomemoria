@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
             this.txtNomeCategoria = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -36,6 +37,7 @@
             this.btnCriarCategoria = new System.Windows.Forms.Button();
             this.uploadFotos = new System.Windows.Forms.OpenFileDialog();
             this.salvarImagens = new System.Windows.Forms.SaveFileDialog();
+            this.legenda = new System.Windows.Forms.ToolTip(this.components);
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -138,5 +140,6 @@
         private System.Windows.Forms.SaveFileDialog salvarImagens;
         private System.Windows.Forms.Button btnCriarCategoria;
         private System.Windows.Forms.Label labelQtdeImagens;
+        private System.Windows.Forms.ToolTip legenda;
     }
 }
