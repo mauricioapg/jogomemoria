@@ -79,6 +79,7 @@
             this.btnAdministrador.Size = new System.Drawing.Size(38, 23);
             this.btnAdministrador.TabIndex = 2;
             this.btnAdministrador.UseVisualStyleBackColor = true;
+            this.btnAdministrador.Visible = false;
             this.btnAdministrador.Click += new System.EventHandler(this.btnAdmin_Click);
             // 
             // telaInicial
