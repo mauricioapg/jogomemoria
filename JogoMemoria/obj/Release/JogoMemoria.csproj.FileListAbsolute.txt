@@ -1,0 +1,32 @@
+C:\Users\mauricio.gabriel\Desktop\JogoMemoria\JogoMemoria\bin\Release\JogoMemoria.exe.config
+C:\Users\mauricio.gabriel\Desktop\JogoMemoria\JogoMemoria\bin\Release\JogoMemoria.exe
+C:\Users\mauricio.gabriel\Desktop\JogoMemoria\JogoMemoria\bin\Release\JogoMemoria.pdb
+C:\Users\mauricio.gabriel\Desktop\JogoMemoria\JogoMemoria\obj\Release\JogoMemoria.Properties.Resources.resources
+C:\Users\mauricio.gabriel\Desktop\JogoMemoria\JogoMemoria\obj\Release\JogoMemoria.csproj.GenerateResource.cache
+C:\Users\mauricio.gabriel\Desktop\JogoMemoria\JogoMemoria\obj\Release\JogoMemoria.csproj.CoreCompileInputs.cache
+C:\Users\mauricio.gabriel\Desktop\JogoMemoria\JogoMemoria\obj\Release\JogoMemoria.exe
+C:\Users\mauricio.gabriel\Desktop\JogoMemoria\JogoMemoria\obj\Release\JogoMemoria.pdb
+C:\Users\mauricio.gabriel\Desktop\JogoMemoria\JogoMemoria\obj\Release\JogoMemoria.telaJogo.resources
+C:\Users\mauricio.gabriel\Desktop\JogoMemoria\JogoMemoria\obj\Release\JogoMemoria.telaInicial.resources
+C:\Users\mauricio.gabriel\Desktop\JogoMemoria\JogoMemoria\obj\Release\JogoMemoria.telaFundo.resources
+C:\Users\mauricio.gabriel\Desktop\JogoMemoria\JogoMemoria\obj\Release\JogoMemoria.telaCriarCategoria.resources
+C:\Users\mauricio.gabriel\Desktop\JogoMemoria\JogoMemoria\obj\Release\JogoMemoria.csprojAssemblyReference.cache
+C:\Users\mauricio.gabriel\Desktop\JogoMemoria\JogoMemoria\obj\Release\JogoMemoria.teste.resources
+C:\Users\mauricio.gabriel\Desktop\JogoMemoria\JogoMemoria\obj\Release\JogoMemoria.telaRemoverCategoria.resources
+C:\Users\mauricio.gabriel\Desktop\JogoMemoria\JogoMemoria\obj\Release\JogoMemoria.telaAdministrador.resources
+C:\Users\mauricio.gabriel\Desktop\JogoMemoria (Versão Pessoal)\JogoMemoria\bin\Release\JogoMemoria.exe.config
+C:\Users\mauricio.gabriel\Desktop\JogoMemoria (Versão Pessoal)\JogoMemoria\bin\Release\JogoMemoria.exe
+C:\Users\mauricio.gabriel\Desktop\JogoMemoria (Versão Pessoal)\JogoMemoria\bin\Release\JogoMemoria.pdb
+C:\Users\mauricio.gabriel\Desktop\JogoMemoria (Versão Pessoal)\JogoMemoria\obj\Release\JogoMemoria.csprojAssemblyReference.cache
+C:\Users\mauricio.gabriel\Desktop\JogoMemoria (Versão Pessoal)\JogoMemoria\obj\Release\JogoMemoria.telaJogo.resources
+C:\Users\mauricio.gabriel\Desktop\JogoMemoria (Versão Pessoal)\JogoMemoria\obj\Release\JogoMemoria.Properties.Resources.resources
+C:\Users\mauricio.gabriel\Desktop\JogoMemoria (Versão Pessoal)\JogoMemoria\obj\Release\JogoMemoria.telaAdministrador.resources
+C:\Users\mauricio.gabriel\Desktop\JogoMemoria (Versão Pessoal)\JogoMemoria\obj\Release\JogoMemoria.telaCriarCategoria.resources
+C:\Users\mauricio.gabriel\Desktop\JogoMemoria (Versão Pessoal)\JogoMemoria\obj\Release\JogoMemoria.telaFundo.resources
+C:\Users\mauricio.gabriel\Desktop\JogoMemoria (Versão Pessoal)\JogoMemoria\obj\Release\JogoMemoria.telaInicial.resources
+C:\Users\mauricio.gabriel\Desktop\JogoMemoria (Versão Pessoal)\JogoMemoria\obj\Release\JogoMemoria.telaRemoverCategoria.resources
+C:\Users\mauricio.gabriel\Desktop\JogoMemoria (Versão Pessoal)\JogoMemoria\obj\Release\JogoMemoria.teste.resources
+C:\Users\mauricio.gabriel\Desktop\JogoMemoria (Versão Pessoal)\JogoMemoria\obj\Release\JogoMemoria.csproj.GenerateResource.cache
+C:\Users\mauricio.gabriel\Desktop\JogoMemoria (Versão Pessoal)\JogoMemoria\obj\Release\JogoMemoria.csproj.CoreCompileInputs.cache
+C:\Users\mauricio.gabriel\Desktop\JogoMemoria (Versão Pessoal)\JogoMemoria\obj\Release\JogoMemoria.exe
+C:\Users\mauricio.gabriel\Desktop\JogoMemoria (Versão Pessoal)\JogoMemoria\obj\Release\JogoMemoria.pdb
