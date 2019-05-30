@@ -50,6 +50,7 @@
             this.btnFechar = new System.Windows.Forms.Button();
             this.ptBoxErro = new System.Windows.Forms.PictureBox();
             this.label4 = new System.Windows.Forms.Label();
+            this.timerFinalizador = new System.Windows.Forms.Timer(this.components);
             this.menu.SuspendLayout();
             this.panelResultados.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ptBoxErro)).BeginInit();
@@ -228,12 +229,15 @@
             // 
             // btnAvancar
             // 
-            this.btnAvancar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnAvancar.BackgroundImage")));
             this.btnAvancar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnAvancar.Location = new System.Drawing.Point(350, 5);
+            this.btnAvancar.Enabled = false;
+            this.btnAvancar.Font = new System.Drawing.Font("Comic Book", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAvancar.ForeColor = System.Drawing.Color.DarkGray;
+            this.btnAvancar.Location = new System.Drawing.Point(350, 11);
             this.btnAvancar.Name = "btnAvancar";
             this.btnAvancar.Size = new System.Drawing.Size(107, 33);
             this.btnAvancar.TabIndex = 8;
+            this.btnAvancar.Text = "Avançar";
             this.btnAvancar.UseVisualStyleBackColor = true;
             this.btnAvancar.Click += new System.EventHandler(this.btnAvancar_Click);
             // 
@@ -295,6 +299,12 @@
             this.label4.Size = new System.Drawing.Size(0, 13);
             this.label4.TabIndex = 14;
             // 
+            // timerFinalizador
+            // 
+            this.timerFinalizador.Enabled = true;
+            this.timerFinalizador.Interval = 500;
+            this.timerFinalizador.Tick += new System.EventHandler(this.timerFinalizador_Tick);
+            // 
             // telaJogo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -355,6 +365,7 @@
         private System.Windows.Forms.Button btnFechar;
         private System.Windows.Forms.PictureBox ptBoxErro;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Timer timerFinalizador;
     }
 }
 

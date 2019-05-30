@@ -16,12 +16,12 @@ namespace JogoMemoria
 {
     public partial class telaJogo : Form
     {
+        #region VARIÁVEIS
         TableLayoutPanel tabelaAtual;
         int nivel = 1;
         int limite;
         string versoCarta = "verso_carta.png";
         System.Timers.Timer verificador;
-        System.Timers.Timer finalizador;
         Boolean concluido = false;
         int contadorCartas = 0;
         int contadorAcertos = 0;
@@ -36,7 +36,9 @@ namespace JogoMemoria
         public static List<Image> listaAux2 = new List<Image>();
         public static DirectoryInfo pastaRaiz = new DirectoryInfo(@"imagens/");
         public static DirectoryInfo pasta;
+        #endregion
 
+        #region MÉTODOS
         public telaJogo()
         {
             InitializeComponent();
@@ -48,23 +50,6 @@ namespace JogoMemoria
             verificador.Interval = 1000; //a cada 1 segundo o programa é executado novamente
             verificador.Elapsed += new ElapsedEventHandler(VerificarConclusao_Tick);
             verificador.Enabled = true;
-        }
-
-        public void FinalizarNivel()
-        {
-            finalizador = new System.Timers.Timer();
-            finalizador.Interval = 1000; //a cada 1 segundo o programa é executado novamente
-            finalizador.Elapsed += new ElapsedEventHandler(FinalizadorNivel_Tick);
-            finalizador.Enabled = true;
-        }
-
-        private void FinalizadorNivel_Tick(object sender, ElapsedEventArgs e)
-        {
-            finalizador.Start();
-            if (concluido == true)
-            {
-                btnAvancar.Enabled = true;
-            }
         }
 
         private void DefinirTabelaAtual()
@@ -81,32 +66,6 @@ namespace JogoMemoria
             {
                 tabelaAtual = tabelaNivel3;
             }
-        }
-
-        private void VerificarConclusao_Tick(object sender, ElapsedEventArgs e)
-        {
-            DefinirTabelaAtual();
-            int contadorDesabilitados = 0;
-            foreach (Button item in tabelaAtual.Controls)
-            {
-                if (item.Enabled == false)
-                {
-                    contadorDesabilitados++;
-                }
-            }
-            if (contadorDesabilitados == tabelaAtual.Controls.Count)
-            {
-                concluido = true;
-                verificador.Stop();
-                cronometro.Stop();
-                //MessageBox.Show("Parabéns, você concluiu este jogo!", "Confirmação", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-        }
-
-        private void telaPrincipal_Load(object sender, EventArgs e)
-        {
-            IniciarPrograma();
-            DefinirFontesPadrao();
         }
 
         private void IniciarPrograma()
@@ -127,12 +86,12 @@ namespace JogoMemoria
                 tabelaNivel2.Visible = true;
             }
             else if (nivel == 3)
-            {                
+            {
                 OrganizarItens(tabelaNivel3);
                 tabelaNivel1.Visible = false;
                 tabelaNivel2.Visible = false;
-                tabelaNivel3.Visible = true;      
-            }            
+                tabelaNivel3.Visible = true;
+            }
             AdicionarBotoes();
             EmbaralharCartasLista(listaImagens);
             IniciarVerificacao();
@@ -264,7 +223,7 @@ namespace JogoMemoria
             {
                 limite = 12;
             }
-            else if(nivel == 3)
+            else if (nivel == 3)
             {
                 limite = 18;
             }
@@ -305,6 +264,61 @@ namespace JogoMemoria
         public Boolean CompararImagens(Image img1, Image img2)
         {
             return Enumerable.SequenceEqual(ObterBytesImagens(img1), ObterBytesImagens(img2));
+        }
+
+        private void ReabrirListaCategorias()
+        {
+            telaInicial tela = new telaInicial();
+            tela.MdiParent = telaFundo.ActiveForm;
+            tela.Show();
+            listaAux0.Clear();
+            listaAux1.Clear();
+            listaAux2.Clear();
+            listaImagens.Clear();
+            listaRandom.Clear();
+            if (telaInicial.adm == true)
+            {
+                tela.menuCriarCategoria.Visible = true;
+                tela.menuRemoverCategoria.Visible = true;
+            }
+        }
+
+        private int ContarItensPasta()
+        {
+            int cont = 0;
+            foreach (var item in pasta.GetFiles())
+            {
+                cont++;
+            }
+            return cont;
+        }
+        #endregion
+
+        #region EVENTOS
+        private void VerificarConclusao_Tick(object sender, ElapsedEventArgs e)
+        {
+            DefinirTabelaAtual();
+            int contadorDesabilitados = 0;
+            foreach (Button item in tabelaAtual.Controls)
+            {
+                if (item.Enabled == false)
+                {
+                    contadorDesabilitados++;
+                }
+            }
+            if (contadorDesabilitados == tabelaAtual.Controls.Count)
+            {
+                concluido = true;
+                verificador.Stop();
+                cronometro.Stop();
+                //MessageBox.Show("Parabéns, você concluiu este jogo!", "Confirmação", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
+
+        private void telaPrincipal_Load(object sender, EventArgs e)
+        {
+            IniciarPrograma();
+            DefinirFontesPadrao();
         }
 
         private void Botao_Click(object sender, EventArgs e)
@@ -989,67 +1003,30 @@ namespace JogoMemoria
             IniciarPrograma();
         }
 
-        private int ContarItensPasta()
-        {
-            int cont = 0;
-            foreach (var item in pasta.GetFiles())
-            {
-                cont++;
-            }
-            return cont;
-        }
-
         private async void btnAvancar_Click(object sender, EventArgs e)
         {
-            if (nivel == 3)
+            if (nivel == 3) //chegou no último nível do jogo
             {
                 ptBoxErro.BackgroundImage = Image.FromFile(@"imagens/sem_niveis2.jpg");
                 ptBoxErro.Visible = true;
                 await Espera(1000);
                 ptBoxErro.Visible = false;
             }
-            else if (ContarItensPasta() < 12)
+            else if (ContarItensPasta() < 12) //pasta contém menos de 12 fotos
             {
                 ptBoxErro.BackgroundImage = Image.FromFile(@"imagens/sem_niveis.jpg");
                 ptBoxErro.Visible = true;
                 await Espera(1000);
                 ptBoxErro.Visible = false;
             }
-            else
+            else //ao concluir o nível
             {
-                if (concluido == true)
-                {
-                    nivel++;
-                    concluido = false;
-                    DefinirTabelaAtual();
-                    listaImagens.Clear();
-                    tabelaAtual.Controls.Clear();
-                    IniciarPrograma();
-                }
-                else
-                {
-                    ptBoxErro.BackgroundImage = Image.FromFile(@"imagens/fim_nivel.jpg");
-                    ptBoxErro.Visible = true;
-                    await Espera(1000);
-                    ptBoxErro.Visible = false;
-                }
-            }
-        }
-
-        private void ReabrirListaCategorias()
-        {
-            telaInicial tela = new telaInicial();
-            tela.MdiParent = telaFundo.ActiveForm;
-            tela.Show();
-            listaAux0.Clear();
-            listaAux1.Clear();
-            listaAux2.Clear();
-            listaImagens.Clear();
-            listaRandom.Clear();
-            if (telaInicial.adm == true)
-            {
-                tela.menuCriarCategoria.Visible = true;
-                tela.menuRemoverCategoria.Visible = true;
+                nivel++;
+                concluido = false;
+                DefinirTabelaAtual();
+                listaImagens.Clear();
+                tabelaAtual.Controls.Clear();
+                IniciarPrograma();
             }
         }
 
@@ -1070,7 +1047,7 @@ namespace JogoMemoria
 
         private void telaJogo_FormClosing(object sender, FormClosingEventArgs e)
         {
-            
+
         }
 
         private void btnFechar_Click(object sender, EventArgs e)
@@ -1078,5 +1055,19 @@ namespace JogoMemoria
             ReabrirListaCategorias();
             this.Close();
         }
+
+        private void timerFinalizador_Tick(object sender, EventArgs e)
+        {
+            if (concluido == true)
+            {
+                btnAvancar.Enabled = true;
+                btnAvancar.ForeColor = Color.DarkCyan;
+            }
+            else
+            {
+                btnAvancar.Enabled = false;
+            }
+        }
+        #endregion
     }
 }
